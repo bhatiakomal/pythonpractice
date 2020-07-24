@@ -1,0 +1,20 @@
+import PyPDF2
+f=open('new.pdf','rb')
+'''pdf_reader=PyPDF2.PdfFileReader(f)
+print(pdf_reader.numPages)
+page_one=pdf_reader.getPage(0)
+print(page_one)
+page_one_text=page_one.extractText()
+print(page_one_text)
+f.close()'''
+
+f=open('new2.pdf','rb')
+pdf_reader=PyPDF2.PdfFileReader(f)
+first_page=pdf_reader.getPage(0)
+print(first_page)
+pdf_writer=PyPDF2.PdfFileWriter()
+print(type(first_page))
+pdf_writer.addPage(first_page)
+pdf_output=open("some_new_doc.pdf",'wb')
+print(pdf_writer.write(pdf_output))
+f.close()
